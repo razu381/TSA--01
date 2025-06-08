@@ -54,7 +54,7 @@ interface Product {
 
 function getMostExpensiveProduct(products: Product[]): Product | null {
   if (products.length === 0) return null;
-  let max = { name: "", price: 0 };
+  let max: Product = products[0];
   products.forEach((product) => {
     if (product.price > max.price) max = product;
   });
@@ -88,11 +88,3 @@ async function squareAsync(n: number): Promise<number> {
     }, 1000);
   });
 }
-
-
-interface person {
-    name: string;
-    age: number
-}
-
-console.log(keyof person)
